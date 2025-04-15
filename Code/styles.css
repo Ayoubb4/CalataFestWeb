@@ -1,0 +1,396 @@
+/* =====================================================
+   Calatafest 
+   ===================================================== */
+
+/* RESET Y VARIABLES */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colores */
+  --primary-color: #FFDE00;        /* Amarillo vibrante */
+  --secondary-color: #FFAA00;      /* Naranja apasionado */
+  --bg-dark: #000;                /* Negro absoluto */
+  --bg-darker: #111;              /* Negro profundo */
+  --light-color: #fff;            /* Blanco */
+  --planet-color: rgba(255, 255, 255, 0.2);
+  --overlay-color: rgba(0, 0, 0, 0.7); /* Tintado negro semitransparente */
+
+  /* Tipografía */
+  --font-family: 'Roboto', sans-serif;
+
+  /* Otros */
+  --hero-heading-shadow: 3px 3px 0 #fff;
+}
+
+/* ESTILOS GLOBALES */
+body {
+  font-family: 'Sofia Sans', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--light-color);
+  overflow-x: hidden;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el contenido ocupe al menos toda la altura de la ventana */
+}
+
+main {
+  flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: var(--primary-color);
+  padding: 10px 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: center; /* Centra todo el contenido horizontalmente */
+  align-items: center;
+  height: 150px; /* Altura fija de la navbar */
+}
+
+.navbar .logo img {
+  height: 100px; /* Reduce el tamaño del logo */
+  width: auto; /* Mantiene la proporción del logo */
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: var(--bg-dark);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+  color: var(--secondary-color);
+}
+
+/* =====================================================
+   VIDEO BANNER – Tira de video de fondo
+   ===================================================== */
+.hero-section {
+  position: relative;
+  height: calc(100vh - 60px); /* Resta la altura de la navbar */
+  width: 100%;
+  overflow: hidden; /* Oculta las partes del video que sobresalen */
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  margin-top: 60px; /* Asegura que el header comience debajo de la navbar */
+}
+
+.elementor-background-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca el video detrás del contenido */
+  pointer-events: none; /* Desactiva la interacción del usuario con el video */
+}
+
+.elementor-background-video-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+  object-position: center; /* Centra el video horizontal y verticalmente */
+  z-index: -1; /* Coloca el video debajo del overlay */
+}
+
+.video-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--light-color);
+}
+
+.video-overlay-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--overlay-color);
+  z-index: 1;
+}
+
+/* =====================================================
+   HERO CONTENT – Centrado en el medio de la pantalla
+   ===================================================== */
+.hero-content {
+  position: relative;
+  padding-top: 100px;
+  z-index: 5;
+  text-align: center;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  /* Efecto de texto degradado */
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--hero-heading-shadow);
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background: var(--light-color);
+  color: var(--bg-dark);
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid var(--light-color);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--light-color);
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   NUEVAS SECCIONES DE IMAGEN Y TEXTO
+   ===================================================== */
+.festival-background {
+  position: relative;
+  background-image: url('/images/festival19.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--light-color);
+}
+
+.festival-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+  z-index: 1;
+}
+
+.feature-section {
+  position: relative;
+  padding: 80px 0;
+  z-index: 2;
+}
+
+.feature-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.feature-image, 
+.feature-content {
+  flex: 1;
+}
+
+.feature-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feature-content {
+  padding: 20px;
+}
+
+.feature-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.feature-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Invierte el orden para las secciones alternas */
+.feature-section.reverse .feature-container {
+  flex-direction: row-reverse;
+}
+/* =====================================================
+   Barra De Separación
+   ===================================================== */
+/* Barra de separación */
+.separador {
+  background-color: var(--primary-color); /* Fondo amarillo */
+  color: var(--bg-dark); /* Texto negro */
+  text-align: center;
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.qodef-m-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.qodef-m-text {
+  display: flex;
+  gap: 20px;
+  animation: scroll 10s linear infinite; /* Animación de desplazamiento */
+}
+
+.qodef-m-text--copy {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Comienza fuera del contenedor */
+}
+
+.qodef-m-text-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Animación de desplazamiento */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* =====================================================
+   SECCIONES REGULARES
+   ===================================================== */
+.section {
+  padding: 80px 0;
+  background-color: var(--bg-dark);
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+  background: var(--bg-darker);
+  color: var(--light-color);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto; /* Asegura que el footer esté al final */
+}
+
+/* =====================================================
+   RESPONSIVE – Adaptación a Pantallas Pequeñas
+   ===================================================== */
+@media (max-width: 992px) {
+  .feature-container {
+    flex-direction: column;
+  }
+  
+  .feature-section.reverse .feature-container {
+    flex-direction: column;
+  }
+  
+  .feature-image, 
+  .feature-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .feature-content h2 {
+    font-size: 2rem;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+  }
+  
+  .feature-section {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content .btn {
+    padding: 10px 25px;
+  }
+  
+  .feature-content h2 {
+    font-size: 1.8rem;
+  }
+}
