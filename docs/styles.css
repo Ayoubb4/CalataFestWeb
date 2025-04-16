@@ -34,17 +34,24 @@
   /* Otros */
   --hero-heading-shadow: 3px 3px 0 #fff;
 }
-
 /* ESTILOS GLOBALES */
 body {
   font-family: 'WeekendPlans', sans-serif;
-  background-color: var(--bg-dark);
+  background-color: #ED6E38;
   color: var(--light-color);
   overflow-x: hidden;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Asegura que el contenido ocupe al menos toda la altura de la ventana */
+  min-height: 100vh;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: absolute;
+  background-color: #ED6E38;
+  opacity: 0.5; /* Puedes ajustar esto para más o menos intensidad */
+  z-index: -1;
 }
 
 main {
@@ -407,50 +414,97 @@ main {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
 }
 
-/* =====================================================
-   FOOTER
-   ===================================================== */
-/* Footer */
+/* ------------------------ */
+/* Estilo principal del footer */
+/* ------------------------ */
 footer {
   background: var(--bg-darker);
   color: var(--light-color);
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  padding: 10px; /* Ajusta el padding según necesites */
+  margin-top: auto; /* Esto asegura que el footer siempre esté en la parte inferior */
 }
 
+/* ------------------------ */
+/* Contenedor principal del footer */
+/* ------------------------ */
 .footer-content {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+/* ------------------------ */
+/* Bloque izquierdo: Texto y redes sociales */
+/* ------------------------ */
+.footer-left {
+  display: flex;
+  flex-direction: column;  /* Organiza en columna: primero el texto, luego las redes */
   align-items: flex-start;
-  width: 100%;
-  gap: 20px;
 }
 
 .footer-text {
-  flex: 1;
-  text-align: left;
+  margin-bottom: 10px;  /* Separa el texto de las redes sociales */
 }
 
+/* Redes sociales: se muestran en línea */
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
 
+.social-icon img {
+  width: 40px;
+  height: 40px;
+  filter: sepia(100%);
+  transition: filter 0.3s ease;
+}
+
+.social-icon:hover img {
+  filter: none;
+}
+
+/* ------------------------ */
+/* Sección de enlaces legales */
+/* ------------------------ */
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-legal ul {
+  display: grid;
+  grid-template-columns: repeat(2, auto);  
+  flex-direction: row;
+  list-style: none;
+  gap: 20px;
+}
+
+.footer-legal a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: #F8BD37;
+}
+
+/* ------------------------ */
+/* Sección de colaboradores */
+/* ------------------------ */
 .footer-collaborators {
-  flex: 1;
   text-align: right;
-}
-
-.footer-collaborators h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
 }
 
 .collaborators-container {
   display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
 }
 
 .collaborators-container img {
@@ -464,59 +518,34 @@ footer {
 .collaborators-container img:hover {
   transform: scale(1.1);
 }
-footer {
-  background: var(--bg-darker);
-  color: var(--light-color);
-  padding: 20px;
-  display: flex;
-  justify-content: center; /* Centra horizontalmente el contenido del footer */
-  align-items: center; /* Centra verticalmente el contenido del footer */
-  flex-wrap: wrap;
-}
 
-.footer-legal {
-  margin-top: 0; /* Elimina el margen superior */
-  font-size: 14px;
+
+
+#contacto {
+  padding: 40px 20px;
+  color: var(--light-color);
   text-align: center;
 }
 
-.footer-legal ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  gap: 10px; /* Espaciado entre los elementos */
-  list-style-type: none;
-  padding: 0;
-  justify-content: center; /* Centra las columnas */
+#contacto h2, #contacto h3 {
+  margin-bottom: 10px;
 }
 
-.footer-legal li {
-  text-align: center; /* Centra el texto dentro de cada columna */
+#contacto p {
+  max-width: 800px;
+  margin: 0 auto 10px auto;
+  text-align: left;
 }
 
-.footer-legal a {
-  color: #666;
-  text-decoration: none;
-}
-
-.footer-legal a:hover {
-  transition: color 0.3s ease;
-  color: #F8BD37;
-}
-
-  
-.footer-social {
+/* Estilos para el iframe del formulario */
+#contacto iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 880px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
-}
-
-.social-icon img {
-  width: 40px;
-  height: 40px;
-  filter: sepia(100%); /* Aplica el filtro sepia por defecto */
-  transition: filter 0.3s ease; /* Transición suave para el hover */
-}
-
-.social-icon:hover img {
-  filter: none; /* Elimina el filtro sepia al hacer hover */
 }
 
 
@@ -608,7 +637,7 @@ footer {
   }
 
   .hero-section {
-    height: 100vh; /* Asegura que la altura sea de la pantalla completa */
+    height: 100vh;
     margin-top: 0;
   }
 }
@@ -628,6 +657,6 @@ footer {
 
   /* Video adjustments */
   .elementor-background-video-embed {
-    transform: translate(-50%, -50%) scale(1.2);  /* Ajuste de zoom para pantallas más pequeñas */
+    transform: translate(-50%, -50%) scale(1.2);
   }
 }
