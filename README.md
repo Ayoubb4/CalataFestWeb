@@ -63,6 +63,6 @@ README.md              → Este documento
 ## ✍️ Autor
 
 Desarrollado por Ayoub Misbah Fatouh como parte de un proyecto educativo de diseño web.  
-Contacto: [https://www.instagram.com/ayoubb.music/](https://www.instagram.com/ayoubb.music/)
+Contacto: [https://www.instagram.com/ayoubb.music/](https://www.instagram.com/ayoubb.bbb/)
 
 ---
