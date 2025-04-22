@@ -364,6 +364,51 @@ main {
   }
 }
 /* =====================================================
+   MAPA DE UBICACION
+   ===================================================== */
+.ubicacion-section {
+  background-color: #fff6ea; /* Color cálido, amigable */
+  padding: 60px 20px;
+  border-top: 4px solid #ff3c38;
+  border-bottom: 4px solid #ff3c38;
+}
+
+.map-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.map-wrapper h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  color: #1f1f1f;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.map-wrapper p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.map-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.map-frame:hover {
+  transform: scale(1.01);
+}
+
+/* =====================================================
    SECCIONES REGULARES
    ===================================================== */
 .section {
@@ -546,12 +591,9 @@ footer {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
-}
-
-/* =====================================================
-   RESPONSIVE – Adaptación a Pantallas Pequeñas
+}/* =====================================================
+   RESPONSIVE
    ===================================================== */
-
 @media (max-width: 1200px) {
   .container {
     margin: 0 auto;
@@ -559,25 +601,35 @@ footer {
   }
 
   .navbar {
-    padding: 10px 20px;
+    padding: 20px 30px;
   }
 
   .navbar .logo img {
     height: 100px;
   }
+  
+  /* Ajuste del vídeo para eliminar las barras negras */
+  .video-overlay-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(4);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+  }
 }
 
 @media (max-width: 992px) {
-  .feature-container {
+  .feature-container,
+  .feature-section.reverse .feature-container {
     flex-direction: column;
     text-align: center;
   }
 
-  .feature-section.reverse .feature-container {
-    flex-direction: column;
-  }
-
-  .feature-image, .feature-content {
+  .feature-image,
+  .feature-content {
     width: 100%;
   }
 
@@ -587,6 +639,10 @@ footer {
 
   .container {
     padding: 0 20px;
+  }
+
+  .hero-content h1 img {
+    max-height: 140px;
   }
 
   .hero-content h1 {
@@ -609,41 +665,8 @@ footer {
     margin-top: 15px;
   }
 
-  .hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-section video,
-  .elementor-background-video-embed {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  .hero-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
+  .hero-content h1 img {
+    max-height: 120px;
   }
 
   .btn {
@@ -660,9 +683,6 @@ footer {
   .footer-left,
   .footer-collaborators {
     align-items: center;
-  }
-
-  .footer-collaborators {
     justify-content: center;
   }
 
@@ -671,10 +691,9 @@ footer {
   }
 }
 
-
 @media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
+  .hero-content h1 img {
+    max-height: 100px;
   }
 
   .btn {
@@ -706,10 +725,6 @@ footer {
 
   .navbar .logo img {
     height: 80px;
-  }
-
-  .elementor-background-video-embed {
-    transform: translate(-50%, -50%) scale(1.1);
   }
 
   #contacto iframe {
