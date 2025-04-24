@@ -5,8 +5,7 @@
 /* RESET Y VARIABLES */
 @font-face {
   font-family: 'WeekendPlans';
-  src: url('fonts/WEEKENDPLANSJNL.woff2') format('woff2'),
-      url('fonts/WEEKENDPLANSJNL.woff') format('woff');
+  src: url('/docs/fonts/WeekendPlansJNL.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
