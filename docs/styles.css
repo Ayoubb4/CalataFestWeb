@@ -5,8 +5,8 @@
 /* RESET Y VARIABLES */
 @font-face {
   font-family: 'WeekendPlans';
-  src: url('./fonts/WEEKENDPLANSJNL.woff2') format('woff2'),
-       url('./fonts/WEEKENDPLANSJNL.woff') format('woff');
+  src: url('fonts/WEEKENDPLANSJNL.woff2') format('woff2'),
+      url('fonts/WEEKENDPLANSJNL.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -253,7 +253,7 @@ main {
    ===================================================== */
 .festival-background {
   position: relative;
-  background-image: url('/docs/images/festival27.jpg');
+  background-image: url('images/festival27.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
