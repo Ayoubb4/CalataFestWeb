@@ -16,13 +16,29 @@ function handleScrollAnimation() {
   handleScrollAnimation();
 
 
-
 function toggleMenu() {
-  var menu = document.querySelector('.nav-links');
-  menu.classList.toggle('show');
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('show');
+
+  // Alternar icono de hamburguesa a X (opcional)
+  const hamburger = document.querySelector('.hamburger');
+  hamburger.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
 }
 
 function closeMenu() {
-  var menu = document.querySelector('.nav-links');
-  menu.classList.remove('show');
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.remove('show');
+
+  const hamburger = document.querySelector('.hamburger');
+  hamburger.textContent = '☰';
 }
+
+// Cierra el menú si se hace clic fuera
+document.addEventListener('click', function (e) {
+  const nav = document.querySelector('.navbar');
+  const navLinks = document.querySelector('.nav-links');
+  if (!nav.contains(e.target)) {
+    navLinks.classList.remove('show');
+    document.querySelector('.hamburger').textContent = '☰';
+  }
+});

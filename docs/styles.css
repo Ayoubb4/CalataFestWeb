@@ -609,6 +609,10 @@ footer {
    RESPONSIVE
    ===================================================== */
 @media (max-width: 1200px) {
+  html, body {
+    overflow-x: hidden; /* Evita cualquier desbordamiento horizontal */
+  }
+
   .container {
     margin: 0 auto;
     padding: 0 20px;
@@ -622,12 +626,16 @@ footer {
     height: 100px;
   }
   
-  /* Ajuste del vídeo para eliminar las barras negras */
+  /* Ajuste del vídeo para eliminar las barras negras y evitar overflow */
+  .video-overlay-container {
+    overflow: hidden;  /* Recorta el contenido que se salga del contenedor */
+  }
+  
   .video-overlay-container iframe {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(4);
+    transform: translate(-50%, -50%) scale(2); /* Escalado más moderado */
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -671,6 +679,11 @@ footer {
     height: auto;
     padding: 10px 20px;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #ffc233; /* fondo para que no sea transparente */
   }
 
   .navbar .nav-links {
@@ -681,6 +694,13 @@ footer {
 
   .hero-content h1 img {
     max-height: 120px;
+  }
+  
+  /* Ajuste para posicionar correctamente el HeroContent en móvil */
+  .hero-content {
+    padding-top: 200px; /* Más separación del navbar */
+    position: relative;
+    z-index: 1;
   }
 
   .btn {
@@ -693,61 +713,65 @@ footer {
     gap: 20px;
     text-align: center;
   }
-
+  
   .footer-left,
   .footer-collaborators {
     align-items: center;
     justify-content: center;
   }
-
+  
   .footer-legal ul {
     grid-template-columns: 1fr;
   }
-
-  
 }
 
 @media (max-width: 480px) {
   .hero-content h1 img {
     max-height: 100px;
   }
+  
+  /* Mantenemos el ajuste para móviles muy pequeños */
+  .hero-content {
+    padding-top: 200px;
+    position: relative;
+    z-index: 1;
+  }
 
   .btn {
     padding: 10px 20px;
     font-size: 0.85rem;
   }
-
+  
   .feature-content h2 {
     font-size: 1.6rem;
   }
-
+  
   .feature-content p {
     font-size: 1rem;
   }
-
+  
   .gallery-container {
     grid-template-columns: 1fr;
   }
-
+  
   .social-icon img {
     width: 35px;
     height: 35px;
   }
-
+  
   .collaborators-container img {
     width: 80px;
     height: 80px;
   }
-
+  
   .navbar .logo img {
     height: 80px;
   }
-
+  
   #contacto iframe {
     height: 600px;
   }
 }
-
 
 /* Mostrar botón hamburguesa solo en móvil */
 .hamburger {
@@ -760,11 +784,11 @@ footer {
 /* Estilo menú responsive */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
+    display: block; /* Mostrar solo en pantallas pequeñas */
   }
 
   .nav-links {
-    display: none;
+    display: none; /* Ocultar el menú por defecto */
     flex-direction: column;
     gap: 10px;
     margin-top: 15px;
@@ -773,6 +797,10 @@ footer {
   }
 
   .nav-links.show {
-    display: flex;
+    display: flex; /* Mostrar el menú cuando tenga la clase 'show' */
   }
+
+  .nav-links {
+  transition: all 0.3s ease-in-out;
+}
 }
