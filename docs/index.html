@@ -9,17 +9,24 @@
   </head>
   <body>
   <!-- Navbar -->
+<!-- Navbar -->
   <nav class="navbar">
     <a href="index.html" class="logo">
       <img src="../docs/images/LogoHorizontal/logo-negro-transparent.png" alt="Logo Calatafest">
     </a>
+
+    <!-- Botón hamburguesa (solo en móvil) -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Menú de enlaces -->
     <ul class="nav-links">
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="https://calatafest.janto.es/espectaculo/calatafest-2025/20250704CALATAFE">Entradas</a></li>
-      <li><a href="ubicacion.html">Ubicación</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="faq.html" onclick="closeMenu()">FAQ</a></li>
+      <li><a href="https://calatafest.janto.es/espectaculo/calatafest-2025/20250704CALATAFE" onclick="closeMenu()">Entradas</a></li>
+      <li><a href="ubicacion.html" onclick="closeMenu()">Ubicación</a></li>
+      <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
     </ul>
   </nav>
+
 
   <!-- Hero Section con vídeo de fondo -->
   <header class="hero-section">
@@ -40,10 +47,11 @@
     </div>
     <div class="hero-content">
       <h1>
-        <img src="../docs/images/LogoHorizontal/logo_con_sombra.png" alt="Logo Calatafest">
+        <img src="/docs/images/Logos/3.png" alt="Logo Calatafest">
       </h1>
       <a href="https://calatafest.janto.es/espectaculo/calatafest-2025/20250704CALATAFE" target="_blank" class="btn">TICKETS 2025</a>
     </div>
+    
   </header>
 
     <!-- Barra de separación -->
@@ -51,7 +59,7 @@
       <div class="qodef-m-content">
         <div class="qodef-m-text qodef-text--original">
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
-          <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
+          <span class="qodef-m-text-item">CALATAYUD 4-5 DE JULIO</span>
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
           &nbsp;
           &nbsp;
@@ -60,16 +68,7 @@
         
         <div class="qodef-m-text qodef-text--original">
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
-          <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
-          <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
-          &nbsp;
-          &nbsp;
-          &nbsp;
-        </div>
-
-        <div class="qodef-m-text qodef-text--original">
-          <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
-          <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
+          <span class="qodef-m-text-item">CALATAYUD 4-5 DE JULIO</span>
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
           &nbsp;
           &nbsp;
@@ -78,7 +77,7 @@
 
         <div class="qodef-m-text qodef-text--original">
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
-          <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
+          <span class="qodef-m-text-item">CALATAYUD 4-5 DE JULIO</span>
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
           &nbsp;
           &nbsp;
@@ -87,7 +86,16 @@
 
         <div class="qodef-m-text qodef-text--original">
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
+          <span class="qodef-m-text-item">CALATAYUD 4-5 DE JULIO</span>
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+        </div>
+
+        <div class="qodef-m-text qodef-text--original">
+          <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
+          <span class="qodef-m-text-item">CALATAYUD 4-5 DE JULIO</span>
           <span class="qodef-m-text-item">ENTRADAS A LA VENTA</span>
           &nbsp;
           &nbsp;
@@ -178,7 +186,7 @@
           <img src="/docs/images/festival18.jpg" alt="">
         </div>
         <div class="gallery-item">
-          <img src="/docs/images/festival11.jpg" alt="">
+          <img src="/docs/images/festival22.jpg" alt="">
         </div>
         <div class="gallery-item">
           <img src="/docs/images/festival14.jpg" alt="">
@@ -195,10 +203,6 @@
       </div>
     </section>
 
-
-
-
-
     <!-- Footer -->
     <footer>
       <div class="footer-content">
@@ -212,6 +216,12 @@
             </a>
             <a href="https://www.instagram.com/calatafest/" class="social-icon" id="instagram">
               <img src="/docs/images/RRSS/instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@calatafest" class="social-icon" id="youtube">
+              <img src="/docs/images/RRSS/youtube.png" alt="Youtube">
+            </a>
+            <a href="https://www.tiktok.com/@calatafest" class="social-icon" id="titok">
+              <img src="/docs/images/RRSS/tiktok.png" alt="Tiktok">
             </a>
           </div>
         </div>
@@ -228,9 +238,10 @@
         <div class="footer-collaborators">
           <h3>Colaboradores</h3>
           <div class="collaborators-container">
-            <a href="https://www.calatayud.es/"><img src="/docs/images/colaborador1.png" alt="Colaborador 1"></a>
-            <a href="https://www.monbus.es/es"><img src="/docs/images/colaborador2.png" alt="Colaborador 2"></a>
-            <a href="https://www.comunidadcalatayud.com/"><img src="/docs/images/colaborador3.png" alt="Colaborador 3"></a>
+            <a href="https://www.calatayud.es/"><img src="/docs/images/colaborador1.png" alt="AytoCalatayud"></a>
+            <a href="https://www.monbus.es/es"><img src="/docs/images/colaborador2.png" alt="Monbus"></a>
+            <a href="https://www.comunidadcalatayud.com/"><img src="/docs/images/colaborador3.png" alt="ComunidadCalatayud"></a>
+            <a href="https://www.ibercaja.es/"><img src="/docs/images/colaborador4.png" alt="IberCaja"></a>
             <img src="/docs/images/00823fc8-b35f-4d35-9bc2-8931ce681e40__2_-removebg-preview (1).png" alt="ayoubb-logo">
           </div>
         </div>

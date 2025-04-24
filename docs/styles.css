@@ -73,7 +73,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 10px 40px;
-  background: #FFDE00;
+  background: #F8BD37;
   height: 125px;
   z-index: 10;
   position: absolute;
@@ -189,10 +189,13 @@ main {
    ===================================================== */
 .hero-content {
   position: relative;
+  min-height: 100vh; /* mínimo el alto de la pantalla */
   padding-top: 100px;
+  padding-bottom: 100px; /* nuevo: espacio abajo para el botón */
   z-index: 5;
   text-align: center;
   animation: fadeInUp 1.2s ease-out forwards;
+  overflow: visible; /* aseguramos que no corte el botón */
 }
 
 @keyframes fadeInUp {
@@ -207,9 +210,8 @@ main {
 }
 
 .hero-content h1 {
-  font-size: 5rem;
-  margin-bottom: 20px;
-  /* Efecto de texto degradado */
+  margin-bottom: 50px;
+  font-size: 4rem;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   background-clip: text;
@@ -217,9 +219,17 @@ main {
   text-shadow: var(--hero-heading-shadow);
 }
 
+.hero-content h1 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .btn {
   display: inline-block;
   padding: 15px 35px;
+  margin-top: 30px;
   background: var(--light-color);
   color: var(--bg-dark);
   text-transform: uppercase;
@@ -227,6 +237,8 @@ main {
   text-decoration: none;
   border: 2px solid var(--light-color);
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 10;
 }
 
 .btn:hover {
@@ -235,12 +247,13 @@ main {
   transform: scale(1.05);
 }
 
+
 /* =====================================================
    NUEVAS SECCIONES DE IMAGEN Y TEXTO
    ===================================================== */
 .festival-background {
   position: relative;
-  background-image: url('/docs/images/festival22.jpg');
+  background-image: url('/docs/images/festival27.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -319,7 +332,7 @@ main {
    Barra De Separación
    ===================================================== */
 .separador {
-  background-color: var(--primary-color);
+  background-color: #F8BD37;
   color: var(--bg-dark);
   text-align: center;
   padding: 10px 0;
@@ -591,7 +604,9 @@ footer {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
-}/* =====================================================
+}
+
+/* =====================================================
    RESPONSIVE
    ===================================================== */
 @media (max-width: 1200px) {
@@ -689,6 +704,8 @@ footer {
   .footer-legal ul {
     grid-template-columns: 1fr;
   }
+
+  
 }
 
 @media (max-width: 480px) {
@@ -729,5 +746,34 @@ footer {
 
   #contacto iframe {
     height: 600px;
+  }
+}
+
+
+/* Mostrar botón hamburguesa solo en móvil */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Estilo menú responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-links.show {
+    display: flex;
   }
 }

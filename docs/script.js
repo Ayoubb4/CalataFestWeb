@@ -14,3 +14,15 @@ function handleScrollAnimation() {
   window.addEventListener('scroll', handleScrollAnimation);
   
   handleScrollAnimation();
+
+
+
+function toggleMenu() {
+  var menu = document.querySelector('.nav-links');
+  menu.classList.toggle('show');
+}
+
+function closeMenu() {
+  var menu = document.querySelector('.nav-links');
+  menu.classList.remove('show');
+}
