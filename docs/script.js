@@ -1,44 +1,60 @@
 function handleScrollAnimation() {
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    const triggerBottom = window.innerHeight * 0.8;
-  
-    elements.forEach((el) => {
-      const elementTop = el.getBoundingClientRect().top;
-  
-      if (elementTop < triggerBottom && !el.classList.contains('visible')) {
-        el.classList.add('visible');
-      }
-    });
-  }
-  
-  window.addEventListener('scroll', handleScrollAnimation);
-  
-  handleScrollAnimation();
+  const elements = document.querySelectorAll('.animate-on-scroll');
+  const triggerBottom = window.innerHeight * 0.8;
 
+  elements.forEach(function (el) {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < triggerBottom && !el.classList.contains('visible')) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScrollAnimation);
+handleScrollAnimation();
 
 function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('show');
+  var navLinks = document.querySelector('.nav-links');
+  var hamburger = document.querySelector('.hamburger');
 
-  // Alternar icono de hamburguesa a X (opcional)
-  const hamburger = document.querySelector('.hamburger');
-  hamburger.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
+  if (navLinks.classList.contains('show')) {
+    navLinks.classList.remove('fade-in');
+    navLinks.classList.add('fade-out');
+
+    setTimeout(function () {
+      navLinks.classList.remove('show');
+      navLinks.classList.remove('fade-out');
+    }, 300); // duración de la animación
+
+    hamburger.textContent = '☰';
+  } else {
+    navLinks.classList.add('show');
+    navLinks.classList.add('fade-in');
+    hamburger.textContent = '✖';
+  }
 }
 
 function closeMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.remove('show');
+  var navLinks = document.querySelector('.nav-links');
+  var hamburger = document.querySelector('.hamburger');
 
-  const hamburger = document.querySelector('.hamburger');
-  hamburger.textContent = '☰';
+  navLinks.classList.remove('fade-in');
+  navLinks.classList.add('fade-out');
+
+  setTimeout(function () {
+    navLinks.classList.remove('show');
+    navLinks.classList.remove('fade-out');
+    hamburger.textContent = '☰';
+  }, 300);
 }
 
-// Cierra el menú si se hace clic fuera
 document.addEventListener('click', function (e) {
-  const nav = document.querySelector('.navbar');
-  const navLinks = document.querySelector('.nav-links');
+  var nav = document.querySelector('.navbar');
+  var navLinks = document.querySelector('.nav-links');
+  var hamburger = document.querySelector('.hamburger');
+
   if (!nav.contains(e.target)) {
-    navLinks.classList.remove('show');
-    document.querySelector('.hamburger').textContent = '☰';
+    closeMenu();
   }
 });
