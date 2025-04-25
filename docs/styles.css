@@ -132,7 +132,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
 }
 
 .elementor-background-video-container {
@@ -680,6 +679,7 @@ footer {
 
   .hero-content h1 img {
     max-height: 140px;
+    margin-top: 140px;
   }
 
   .hero-content h1 {
