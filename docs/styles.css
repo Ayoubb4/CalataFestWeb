@@ -446,6 +446,9 @@ main {
   padding: 2em;
   text-align: center;
 }
+.gallery-h2{
+  color: #111;
+}
 
 .gallery-container {
   display: grid;
