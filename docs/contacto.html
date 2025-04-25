@@ -4,24 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calatafest - El Festival de Calatayud</title>
-    <link rel="icon" href="/docs/images/LogosVertical/logo_transparent_icon.png" type="image/png">
+    <link rel="icon" href="images/LogosVertical/logo_transparent_icon.png" type="image/png">
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-        <img src="/docs/images/LogoHorizontal/logo-negro-transparent.png" alt="Logo Calatafest">
-      </a>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="images/LogoHorizontal/logo-negro-transparent.png" alt="Logo Calatafest">
+    </a>
 
-      <ul class="nav-links">
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="https://calatafest.janto.es/espectaculo/calatafest-2025/20250704CALATAFE">Entradas</a></li>
-        <li><a href="ubicacion.html">Ubicacion</a></li>
-        <li><a href="contacto.html" class="active">Contacto</a></li>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
 
-      </ul>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="faq.html" onclick="closeMenu()">FAQ</a></li>
+      <li><a href="https://calatafest.janto.es/espectaculo/calatafest-2025/20250704CALATAFE" onclick="closeMenu()">Entradas</a></li>
+      <li><a href="ubicacion.html" onclick="closeMenu()">Ubicación</a></li>
+      <li><a href="contacto.html"  class="active" onclick="closeMenu()">Contacto</a></li>
+    </ul>
+  </nav>
 
 
     <section id="contacto">
@@ -41,7 +43,6 @@
     </section>
     
     
-
 <!-- Footer -->
 <footer>
   <div class="footer-content">
@@ -51,40 +52,40 @@
       </div>
       <div class="footer-social">
         <a href="https://www.facebook.com/calatafest/" class="social-icon" id="facebook">
-          <img src="/docs/images/RRSS/facebook-icon.png" alt="Facebook">
+          <img src="images/RRSS/facebook-icon.png" alt="Facebook">
         </a>
         <a href="https://www.instagram.com/calatafest/" class="social-icon" id="instagram">
-          <img src="/docs/images/RRSS/instagram-icon.png" alt="Instagram">
+          <img src="images/RRSS/instagram-icon.png" alt="Instagram">
         </a>
         <a href="https://www.youtube.com/@calatafest" class="social-icon" id="youtube">
-          <img src="/docs/images/RRSS/youtube.png" alt="Youtube">
+          <img src="images/RRSS/youtube.png" alt="Youtube">
         </a>
         <a href="https://www.tiktok.com/@calatafest" class="social-icon" id="titok">
-          <img src="/docs/images/RRSS/tiktok.png" alt="Tiktok">
+          <img src="images/RRSS/tiktok.png" alt="Tiktok">
         </a>
       </div>
     </div>
-    
+
     <div class="footer-legal">
       <ul>
-        <li><a href="/aviso-legal.html">Aviso Legal</a></li>
-        <li><a href="/politica-proteccion-datos.html">Política de Protección de Datos</a></li>
-        <li><a href="/politica-privacidad.html">Política de Privacidad</a></li>
-        <li><a href="/politica-cookies.html">Política de Cookies</a></li>
+        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+        <li><a href="politica-proteccion-datos.html">Política de Protección de Datos</a></li>
+        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+        <li><a href="politica-cookies.html">Política de Cookies</a></li>
       </ul>
     </div>
-    
+
     <div class="footer-collaborators">
       <h3>Colaboradores</h3>
       <div class="collaborators-container">
-        <a href="https://www.calatayud.es/"><img src="/docs/images/colaborador1.png" alt="AytoCalatayud"></a>
-        <a href="https://www.monbus.es/es"><img src="/docs/images/colaborador2.png" alt="Monbus"></a>
-        <a href="https://www.comunidadcalatayud.com/"><img src="/docs/images/colaborador3.png" alt="ComunidadCalatayud"></a>
-        <a href="https://www.ibercaja.es/"><img src="/docs/images/colaborador4.png" alt="IberCaja"></a>
-        <img src="/docs/images/00823fc8-b35f-4d35-9bc2-8931ce681e40__2_-removebg-preview (1).png" alt="ayoubb-logo">
+        <a href="https://www.calatayud.es/"><img src="images/colaborador1.png" alt="AytoCalatayud"></a>
+        <a href="https://www.monbus.es/es"><img src="images/colaborador2.png" alt="Monbus"></a>
+        <a href="https://www.comunidadcalatayud.com/"><img src="images/colaborador3.png" alt="ComunidadCalatayud"></a>
+        <a href="https://www.ibercaja.es/"><img src="images/colaborador4.png" alt="IberCaja"></a>
+        <img src="images/ayoubb-logo.png" alt="ayoubb-logo">
       </div>
     </div>
   </div>
-</footer>        
+</footer>      
   </body>
 </html>

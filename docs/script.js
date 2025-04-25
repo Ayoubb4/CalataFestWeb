@@ -100,3 +100,25 @@ document.addEventListener('DOMContentLoaded', function() {
     hamburger.classList.remove('active');
   }
 });
+
+window.addEventListener('DOMContentLoaded', function () {
+  var preguntas = document.querySelectorAll('.faq-question');
+
+  for (var i = 0; i < preguntas.length; i++) {
+    preguntas[i].addEventListener('click', function () {
+      var item = this.parentElement;
+
+      if (item.classList.contains('active')) {
+        item.classList.remove('active');
+      } else {
+        // Si quieres cerrar los demás al abrir uno:
+        var activos = document.querySelectorAll('.faq-item.active');
+        for (var j = 0; j < activos.length; j++) {
+          activos[j].classList.remove('active');
+        }
+
+        item.classList.add('active');
+      }
+    });
+  }
+});
