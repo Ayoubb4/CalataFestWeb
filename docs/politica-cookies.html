@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calatafest - El Festival de Calatayud</title>
+    <title>Calatafest - Política Cookies</title>
     <link rel="icon" href="/docs/images/LogosVertical/logo_transparent_icon.png" type="image/png">
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -13,14 +13,113 @@
       <a href="index.html" class="logo">
         <img src="/docs/images/LogoHorizontal/logo-negro-transparent.png" alt="Logo Calatafest">
       </a>
+      
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
 
       <ul class="nav-links">
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="https://calatafest.janto.es/espectaculo/calatafest-2025/20250704CALATAFE">Entradas</a></li>
-        <li><a href="ubicacion.html">Ubicacion</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="faq.html" onclick="closeMenu()">FAQ</a></li>
+        <li><a href="https://calatafest.janto.es/espectaculo/calatafest-2025/20250704CALATAFE" onclick="closeMenu()">Entradas</a></li>
+        <li><a href="ubicacion.html" onclick="closeMenu()">Ubicación</a></li>
+        <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+        <li><a href="artistas.html" onclick="closeMenu()">Artistas</a></li>
+
       </ul>
     </nav>
+
+
+    <section class="legal-section">
+      <div class="container">
+        <h1>Política de Cookies</h1>
+        <div class="legal-content">
+          <h3>¿Qué son las cookies?</h3>
+          <p>
+            Este sitio web utiliza cookies y tecnologías similares que almacenan y recuperan información cuando navegas. 
+            Estas tecnologías pueden servir para reconocerte como usuario, conocer tus hábitos de navegación o personalizar el contenido mostrado.
+          </p>
+    
+          <h3>¿Qué tipos de cookies se utilizan en esta página web?</h3>
+          <ul>
+            <li><strong>Cookies técnicas:</strong> permiten la navegación y el uso de diferentes funciones o servicios del sitio web, como compartir contenidos o contar visitas.</li>
+            <li><strong>Cookies de preferencias o personalización:</strong> recuerdan información para que el usuario acceda con determinadas características personalizadas.</li>
+            <li><strong>Cookies de análisis o medición:</strong> permiten el seguimiento y análisis del comportamiento de los usuarios con fines estadísticos y de mejora.</li>
+            <li><strong>Cookies de publicidad comportamental:</strong> almacenan información sobre los hábitos de navegación para mostrar publicidad personalizada.</li>
+          </ul>
+    
+          <h3>Garantías y opciones sobre las cookies</h3>
+          <p>
+            El usuario puede aceptar o rechazar cookies durante la instalación o actualización del navegador, y también eliminar las cookies almacenadas tras cada sesión.
+            Puede activar funciones como la navegación privada o la opción de no rastrear.
+          </p>
+          <p>Consulte la ayuda de su navegador para más información:</p>
+          <ul>
+            <li><a href="http://windows.microsoft.com/es-ES/windows-vista/Block-or-allow-cookies" target="_blank">Internet Explorer</a></li>
+            <li><a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we" target="_blank">Firefox</a></li>
+            <li><a href="http://support.apple.com/kb/HT1677?viewlocale=es_ES" target="_blank">Safari</a></li>
+            <li><a href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank">Google Chrome</a></li>
+          </ul>
+          <p>
+            El bloqueo de cookies puede afectar total o parcialmente a la funcionalidad de la web.
+          </p>
+    
+          <h3>Tabla de descripción de cookies usadas</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Entidad que utiliza las cookies</th>
+                <th>Cookies</th>
+                <th>Propósito</th>
+                <th>Periodo de conservación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>El propietario de esta web</td>
+                <td>(random)</td>
+                <td>Técnica de usabilidad</td>
+                <td>Sesión</td>
+              </tr>
+              <tr>
+                <td>El propietario de esta web</td>
+                <td>cookieconsent_status</td>
+                <td>Aceptación de cookies</td>
+                <td>1 año</td>
+              </tr>
+              <tr>
+                <td>c822c1b63853ed273b89687ac505f9fa-gdprlock</td>
+                <td>
+                  _ga<br>
+                  _ga_ZSGTE1MV6L<br>
+                  _gid
+                </td>
+                <td>Conocer de manera anónima las páginas vistas</td>
+                <td>
+                  2 años<br>
+                  2 años<br>
+                  2 años
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    
+          <h3>Plazos de conservación de la información</h3>
+          <p>
+            Las cookies se utilizarán solo durante el tiempo necesario para los fines indicados. Las cookies propias no tendrán una duración superior a un año. 
+            Para las cookies de terceros, consulte sus respectivas políticas de privacidad. Una vez caducadas, pueden renovarse si el usuario vuelve a aceptarlas.
+          </p>
+    
+          <h3>Información de contacto</h3>
+          <p>
+            <strong>AYUDFEST S.L</strong><br>
+            CIF: B72994817<br>
+            Paseo Cortes de Aragón 10 Local<br>
+            50300 Calatayud<br>
+            <a href="politica-privacidad.html">Enlace a política de privacidad</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    
     
 <!-- Footer -->
 <footer>
@@ -47,21 +146,20 @@
     
     <div class="footer-legal">
       <ul>
-        <li><a href="/aviso-legal.html">Aviso Legal</a></li>
-        <li><a href="/politica-proteccion-datos.html">Política de Protección de Datos</a></li>
-        <li><a href="/politica-privacidad.html">Política de Privacidad</a></li>
-        <li><a href="/politica-cookies.html">Política de Cookies</a></li>
+        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+        <li><a href="politica-proteccion-datos.html">Política de Protección de Datos</a></li>
+        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+        <li><a href="politica-cookies.html">Política de Cookies</a></li>
       </ul>
     </div>
     
     <div class="footer-collaborators">
-      <h3>Colaboradores</h3>
       <div class="collaborators-container">
-        <a href="https://www.calatayud.es/"><img src="/docs/images/colaborador1.png" alt="AytoCalatayud"></a>
-        <a href="https://www.monbus.es/es"><img src="/docs/images/colaborador2.png" alt="Monbus"></a>
-        <a href="https://www.comunidadcalatayud.com/"><img src="/docs/images/colaborador3.png" alt="ComunidadCalatayud"></a>
-        <a href="https://www.ibercaja.es/"><img src="/docs/images/colaborador4.png" alt="IberCaja"></a>
-        <img src="/docs/images/00823fc8-b35f-4d35-9bc2-8931ce681e40__2_-removebg-preview (1).png" alt="ayoubb-logo">
+        <a href="https://www.heraldo.es/"><img src="images/heraldo.png" alt="Heraldo"></a>
+        <a href="https://www.coca-cola.com/es/es"><img src="images/Coca-Cola.png" alt="Coca-Cola"></a>
+        <a href="https://www.beefeatergin.com/es-es/"><img src="images/beefeater.png" alt="Beefeater"></a>
+        <a href="https://www.ibercaja.es/"><img src="images/colaborador4.png" alt="IberCaja"></a>
+        <a href="https://ambar.com/"><img src="images/ambar.png" alt="Ambar"></a>
       </div>
     </div>
   </div>

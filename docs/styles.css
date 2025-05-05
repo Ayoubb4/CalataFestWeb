@@ -807,6 +807,121 @@ footer {
 .faq-item:nth-child(5) { animation-delay: 0.5s; }
 .faq-item:nth-child(6) { animation-delay: 0.6s; }
 
+
+/* =====================================================
+   AVISO LEGAL
+   ===================================================== */
+/* Legal Section Styles */
+.legal-section {
+  padding: 80px 20px;
+  background-color: #fefefe;
+  border-top: 4px solid #ff3c38;
+  border-bottom: 4px solid #ff3c38;
+  position: relative;
+}
+
+.legal-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.legal-section h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #ea6217;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.legal-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #f8b500, #ea6217);
+}
+
+.legal-content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 1.7;
+}
+
+.legal-content p {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.legal-content ol {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.legal-content li {
+  margin-bottom: 15px;
+}
+
+.legal-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 10px;
+}
+
+.legal-content strong {
+  color: #ea6217;
+}
+
+
+
+
+/* =====================================================
+   ARTISTAS
+   ===================================================== */
+.artistas {
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+  text-align: center;
+  border-top: 4px solid #ff3c38;
+  border-bottom: 4px solid #ff3c38;
+}
+
+.artistas h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ea6217;
+}
+
+.galeria-artistas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.artista-card {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px #f8b500;
+  transition: transform 0.3s;
+}
+
+.artista-card:hover {
+  transform: scale(1.05);
+}
+
+.artista-card img {
+  width: 100%;
+  display: block;
+}
+  
 /* =====================================================
    RESPONSIVE
    ===================================================== */
