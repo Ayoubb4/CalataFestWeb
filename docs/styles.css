@@ -559,16 +559,20 @@ footer {
 
 .collaborators-container {
   display: flex;
-  gap: 10px;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
+  flex-wrap: wrap; /* permite que los logos bajen a otra fila si no caben */
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto; /* opcional: scroll horizontal si es necesario */
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .collaborators-container img {
-  width: 100px;
-  height: 100px;
+  max-height: 60px; /* ajusta según necesidad */
+  height: auto;
+  width: auto;
   object-fit: contain;
-  border-radius: 5px;
   transition: transform 0.3s ease;
 }
 
