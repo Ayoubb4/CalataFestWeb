@@ -988,38 +988,19 @@ footer {
 /* Galería en grid responsive */
 .galeria-artistas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.5rem;
-  justify-items: center; /* centra las tarjetas */
+  justify-items: center;
 }
 
-/* Tarjeta del artista */
-.artista-card {
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(248, 181, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  height: 300px; /* altura fija para uniformidad */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Hover con efecto zoom y elevación */
-.artista-card:hover {
-  transform: scale(1.06) translateY(-5px);
-  box-shadow: 0 6px 16px rgba(255, 60, 56, 0.3);
-}
-
-/* Imagen del artista grande ocupando toda la tarjeta */
-.artista-card img {
-  width: 400px;
-  height: 330px;
+/* Imagen del artista: más grande y responsiva */
+.galeria-artistas img {
+  width: 100%;      /* Ocupa todo el ancho del grid cell */
+  height: auto;     /* Mantiene su proporción original */
   object-fit: contain;
   display: block;
 }
+
 
   
 /* =====================================================
