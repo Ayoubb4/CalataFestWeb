@@ -122,3 +122,31 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
+
+// Seleccionamos el modal y sus elementos
+const modal = document.getElementById('miModal');
+const modalImage = document.getElementById('modalImage');
+const closeModal = document.getElementById('closeModal');
+const galleryImages = document.querySelectorAll('.gallery-item img');
+
+// Al hacer click en cada imagen, se muestra el modal con su src
+galleryImages.forEach(image => {
+  image.addEventListener('click', () => {
+    modal.classList.add('active');
+    modalImage.src = image.src;
+  });
+});
+
+// Al hacer click en el boton de cerrar, se oculta el modal
+closeModal.addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+
+// Opcional: cierra el modal si se hace click fuera de la imagen
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});

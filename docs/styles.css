@@ -477,6 +477,70 @@ main {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
 }
 
+/* Modal: oculto por defecto usando opacity y visibility */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  
+  /* Transición suave para el overlay */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Modal activo: se vuelve visible */
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Imagen dentro del modal con animación de escala */
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
+  /* Comienza un poco reducida para el efecto "pop" */
+  transform: scale(0.9);
+  transition: transform 0.5s ease;
+}
+
+/* Cuando el modal está activo, la imagen se escala a su tamaño final */
+.modal.active img {
+  transform: scale(1);
+}
+
+/* Botón para cerrar el modal, con una transición en el color */
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+  color: #ddd;
+}
+
+
 /* ------------------------ */
 /* Estilo principal del footer */
 /* ------------------------ */
@@ -951,8 +1015,8 @@ footer {
 
 /* Imagen del artista grande ocupando toda la tarjeta */
 .artista-card img {
-  width: 300px;
-  height: 100%;
+  width: 400px;
+  height: 330px;
   object-fit: contain;
   display: block;
 }
