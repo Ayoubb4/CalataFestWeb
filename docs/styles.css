@@ -1001,6 +1001,17 @@ footer {
   display: block;
 }
 
+/* Estilo específico para el cartel completo */
+.cartel-completo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: block;
+}
+
 
   
 /* =====================================================
@@ -1110,6 +1121,11 @@ footer {
     user-select: none;
     z-index: 1000;
     transition: transform 0.3s ease;
+  }
+
+  .cartel-completo img {
+    max-width: 105%;
+    width: 105%;
   }
 
   /* Posicionamiento absoluto para el menú desplegable */
