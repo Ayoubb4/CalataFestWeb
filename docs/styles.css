@@ -1106,6 +1106,63 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .legal-section {
+    padding: 30px 20px;
+  }
+
+  .legal-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .legal-section h3 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+
+  .legal-section p,
+  .legal-section li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .legal-section ul {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+
+  .legal-section table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  .legal-section table th,
+  .legal-section table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    word-wrap: break-word;
+    text-align: left;
+  }
+
+  .legal-section table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+  }
+
+  .legal-section a {
+    color: #3ab8c4;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+   .legal-content {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
   .navbar {
     position: fixed;
     top: 0;
